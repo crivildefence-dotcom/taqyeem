@@ -452,12 +452,18 @@ function submitForm(){
 
   var subject = encodeURIComponent('تقييم المدرب – '+trainer+' – '+school);
   var body    = encodeURIComponent(emailBody);
-  var mailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
-    +'&to='+encodeURIComponent('crivildefence@gmail.com')
-    +'&su='+subject
-    +'&body='+body;
-
-  window.open(mailUrl, '_blank');
+  // WhatsApp message
+  var waText = 'تقييم المدرب%0A'
+    + '========================%0A'
+    + 'المدرسة: '+encodeURIComponent(school)+'%0A'
+    + 'المدرب: '+encodeURIComponent(trainer)+'%0A'
+    + 'نوع التدريب: '+encodeURIComponent(type)+'%0A'
+    + 'المتوسط: '+avg+'%0A'
+    + 'التقدير: '+encodeURIComponent(grade.replace(/[🌟😊🙂😐😞]/g,'').trim())+'%0A'
+    + '========================%0A'
+    + encodeURIComponent(emailBody.substring(emailBody.indexOf('===TAQYEEM_DATA_START==='), emailBody.indexOf('===TAQYEEM_DATA_END===')+22));
+  var waUrl = 'https://wa.me/97455563393?text=' + waText;
+  window.open(waUrl, '_blank');
 
   // Show success
   document.getElementById('form-wrap').style.display = 'none';
