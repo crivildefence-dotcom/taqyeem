@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -451,9 +452,9 @@ function submitForm(){
 
   var subject = encodeURIComponent('تقييم المدرب – '+trainer+' – '+school);
   var body    = encodeURIComponent(emailBody);
-  var mailUrl = 'https://outlook.office.com/mail/deeplink/compose'
-    +'?to='+encodeURIComponent('crivildefence@gmail.com')
-    +'&subject='+subject
+  var mailUrl = 'https://mail.google.com/mail/?view=cm&fs=1'
+    +'&to='+encodeURIComponent('crivildefence@gmail.com')
+    +'&su='+subject
     +'&body='+body;
 
   window.open(mailUrl, '_blank');
