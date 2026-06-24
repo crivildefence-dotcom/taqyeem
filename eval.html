@@ -8,84 +8,45 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Calibri,Arial,sans-serif;background:#EEF1F7;min-height:100vh;padding-bottom:40px}
-
 .header{background:linear-gradient(135deg,#1B2A4A,#2C4270);color:#fff;padding:18px 16px;text-align:center}
 .header-icon{font-size:32px;margin-bottom:6px}
 .header-title{font-size:15px;font-weight:700;line-height:1.5}
 .header-sub{font-size:11px;opacity:.75;margin-top:3px}
 .gold-line{height:3px;background:linear-gradient(90deg,#C9A84C,#F0D080,#C9A84C)}
-
 .info-box{background:#fff;margin:14px;border-radius:10px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,.07);border-right:4px solid #C9A84C}
-.info-box h3{font-size:11px;color:#C9A84C;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.info-box h3{font-size:11px;color:#C9A84C;font-weight:700;margin-bottom:10px}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .info-item label{font-size:10px;color:#999;display:block;margin-bottom:2px}
-.info-item span{font-size:12px;font-weight:700;color:#1B2A4A}
-.info-item input, .info-item select{
-  width:100%;border:1.5px solid #E0E6F0;border-radius:6px;
-  padding:7px 9px;font-size:12px;font-family:Arial;
-  direction:rtl;background:#F8F9FC;color:#1A1816
-}
+.info-item input,.info-item select{width:100%;border:1.5px solid #E0E6F0;border-radius:6px;padding:7px 9px;font-size:12px;font-family:Calibri,Arial;direction:rtl;background:#F8F9FC;color:#1A1816}
 .info-item.full{grid-column:1/-1}
-
-.sec-header{
-  display:flex;align-items:center;gap:8px;
-  margin:18px 14px 10px;padding-bottom:8px;
-  border-bottom:2px solid #1B2A4A;
-}
+.sec-header{display:flex;align-items:center;gap:8px;margin:18px 14px 10px;padding-bottom:8px;border-bottom:2px solid #1B2A4A}
 .sec-header-icon{font-size:16px}
 .sec-header-title{font-size:13px;font-weight:700;color:#1B2A4A;flex:1}
 .sec-header-count{font-size:10px;color:#888;background:#EEF1F7;padding:2px 8px;border-radius:10px}
-
 .q-card{background:#fff;margin:0 14px 10px;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.05);border:1.5px solid transparent;transition:border-color .2s}
 .q-card.error{border-color:#C0392B}
 .q-num{font-size:10px;color:#C9A84C;font-weight:700;margin-bottom:4px}
 .q-text{font-size:13px;font-weight:600;color:#1B2A4A;margin-bottom:12px;line-height:1.5}
-
 .choices{display:flex;gap:6px;flex-wrap:wrap}
-.choice-btn{
-  flex:1;min-width:70px;
-  border:2px solid #E0E6F0;
-  background:#F8F9FC;
-  color:#555;
-  border-radius:8px;
-  padding:8px 4px;
-  font-size:11px;font-weight:600;
-  cursor:pointer;text-align:center;
-  transition:all .2s;
-  font-family:Arial;
-  line-height:1.3;
-}
+.choice-btn{flex:1;min-width:70px;border:2px solid #E0E6F0;background:#F8F9FC;color:#555;border-radius:8px;padding:8px 4px;font-size:11px;font-weight:600;cursor:pointer;text-align:center;transition:all .2s;font-family:Arial;line-height:1.3}
 .choice-btn:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,.1)}
 .choice-btn.c5{border-color:#1E6B3C;background:#1E6B3C;color:#fff}
 .choice-btn.c4{border-color:#1B2A4A;background:#1B2A4A;color:#fff}
 .choice-btn.c3{border-color:#C9A84C;background:#C9A84C;color:#fff}
 .choice-btn.c2{border-color:#C45E0A;background:#C45E0A;color:#fff}
 .choice-btn.c1{border-color:#C0392B;background:#C0392B;color:#fff}
-
 .choice-emoji{font-size:16px;display:block;margin-bottom:3px}
-
 .prog-wrap{margin:10px 14px 0;background:#E0E6F0;border-radius:4px;height:5px;overflow:hidden}
 .prog-fill{height:100%;background:linear-gradient(90deg,#C9A84C,#1B2A4A);border-radius:4px;transition:width .4s}
 .prog-label{text-align:center;font-size:10px;color:#aaa;margin:4px 0 14px}
-
 .open-card{background:#fff;margin:0 14px 10px;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
 .open-label{font-size:12px;font-weight:600;color:#1B2A4A;margin-bottom:8px}
 textarea{width:100%;border:1.5px solid #E0E6F0;border-radius:8px;padding:10px;font-family:Arial;font-size:12px;min-height:75px;direction:rtl;resize:vertical;background:#F8F9FC;color:#1A1816}
 textarea:focus{outline:none;border-color:#1B2A4A}
-
 .err-msg{display:none;background:#FEF0F0;border:1px solid #C0392B;color:#C0392B;border-radius:8px;padding:10px 14px;font-size:12px;margin:0 14px 10px}
-
-.submit-btn{
-  display:block;width:calc(100% - 28px);margin:4px 14px;
-  background:linear-gradient(135deg,#1B2A4A,#2C4270);
-  color:#fff;border:none;border-radius:12px;
-  padding:15px;font-size:15px;font-weight:700;
-  cursor:pointer;font-family:Arial;
-  transition:opacity .2s,transform .1s;
-}
+.submit-btn{display:block;width:calc(100% - 28px);margin:4px 14px;background:linear-gradient(135deg,#1B2A4A,#2C4270);color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;font-family:Arial;transition:opacity .2s,transform .1s}
 .submit-btn:hover{opacity:.9}
 .submit-btn:active{transform:scale(.98)}
-
 .success{max-width:420px;margin:50px auto;padding:30px 20px;text-align:center;font-family:Arial;direction:rtl;display:none}
 .success-icon{font-size:64px;margin-bottom:14px}
 .success-title{font-size:20px;font-weight:700;color:#1B2A4A;margin-bottom:6px}
@@ -105,7 +66,6 @@ textarea:focus{outline:none;border-color:#1B2A4A}
   </div>
   <div class="gold-line"></div>
 
-  <!-- معلومات الجلسة -->
   <div class="info-box">
     <h3>📋 معلومات الجلسة التدريبية</h3>
     <div class="info-grid">
@@ -120,25 +80,17 @@ textarea:focus{outline:none;border-color:#1B2A4A}
         </select>
       </div>
       <div class="info-item full">
-        <label>نوع التدريب *</label>
-        <select id="f-type" onchange="onTypeChange()" style="width:100%;border:1.5px solid #E0E6F0;border-radius:8px;padding:10px 12px;font-size:13px;font-family:Calibri,Arial;direction:rtl;background:#F8F9FC;color:#1A1816">
-          <option value="">-- اختر نوع التدريب --</option>
-        </select>
+        <label>نوع التدريب * <span style="font-size:10px;color:#888">(يمكن اختيار أكثر من نوع)</span></label>
+        <div id="f-type-wrap" style="border:1.5px solid #E0E6F0;border-radius:8px;padding:10px 12px;background:#F8F9FC;display:flex;flex-direction:column;gap:8px"></div>
       </div>
     </div>
   </div>
 
-  <!-- شريط التقدم -->
   <div class="prog-wrap"><div class="prog-fill" id="prog" style="width:0%"></div></div>
   <div class="prog-label" id="prog-label">اختر نوع التدريب لتبدأ التقييم</div>
-
-  <!-- الأسئلة -->
   <div id="q-container"></div>
-
-  <!-- رسالة خطأ -->
   <div class="err-msg" id="err-msg">⚠️ يرجى الإجابة على جميع الأسئلة</div>
 
-  <!-- أسئلة مفتوحة -->
   <div id="open-section" style="display:none">
     <div class="sec-header">
       <span class="sec-header-icon">✏️</span>
@@ -158,11 +110,9 @@ textarea:focus{outline:none;border-color:#1B2A4A}
     </div>
   </div>
 
-  <!-- زر الإرسال -->
   <button class="submit-btn" id="submit-btn" style="display:none" onclick="submitForm()">✅ إرسال التقييم</button>
 </div>
 
-<!-- شاشة النجاح -->
 <div class="success" id="success">
   <div class="success-icon">✅</div>
   <div class="success-title">شكراً على تقييمك!</div>
@@ -176,31 +126,28 @@ textarea:focus{outline:none;border-color:#1B2A4A}
 </div>
 
 <script>
-// ── خيارات التقييم ──────────────────────────────────
 var CHOICES = [
-  {v:5, label:'ممتاز',     emoji:'🌟', cls:'c5'},
-  {v:4, label:'جيد جداً',  emoji:'😊', cls:'c4'},
-  {v:3, label:'جيد',       emoji:'🙂', cls:'c3'},
-  {v:2, label:'مقبول',     emoji:'😐', cls:'c2'},
-  {v:1, label:'ضعيف',      emoji:'😞', cls:'c1'},
+  {v:5,label:'ممتاز',emoji:'🌟',cls:'c5'},
+  {v:4,label:'جيد جداً',emoji:'😊',cls:'c4'},
+  {v:3,label:'جيد',emoji:'🙂',cls:'c3'},
+  {v:2,label:'مقبول',emoji:'😐',cls:'c2'},
+  {v:1,label:'ضعيف',emoji:'😞',cls:'c1'}
 ];
 
-// ── أسئلة نوع التدريب ────────────────────────────────
 var TYPE_Q = {
-  'محاضرة توعوية': ['هل كان محتوى المحاضرة واضحاً ومفهوماً؟','هل كانت المعلومات التوعوية مفيدة وذات صلة؟','هل تناسبت المحاضرة مع الفئة المستهدفة؟','هل شعرت بأن المحاضرة حققت هدفها التوعوي؟'],
-  'معرض توعوي': ['هل كانت عروض المعرض جذابة ومفيدة؟','هل المواد والنماذج المعروضة واضحة ومعبّرة؟','هل استفدت من المعلومات المقدمة في المعرض؟','هل كان المعرض منظماً ويسهل التجول فيه؟'],
-  'ورشة عمل': ['هل كانت أنشطة الورشة تفاعلية ومحفزة؟','هل حققت الورشة أهدافها التدريبية؟','هل المواد والأدوات المستخدمة كانت كافية؟','هل شاركت بفاعلية في الورشة؟'],
-  'التدريب على استخدام الطفايات (الليزر)': ['هل شرح المدرب أنواع الطفايات بوضوح؟','هل كان التدريب على الطفاية الليزرية واضحاً؟','هل شعرت بالثقة في استخدام الطفاية بعد التدريب؟','هل التزم التدريب بإجراءات السلامة؟'],
-  'التدريب على استخدام الطفايات (الحي)': ['هل شرح المدرب أنواع الطفايات بوضوح؟','هل كان التطبيق العملي على الطفاية الحقيقية كافياً؟','هل شعرت بالثقة في استخدام الطفاية بعد التدريب؟','هل التزم التدريب بإجراءات السلامة؟'],
-  'استقبال زيارة في مركز الدفاع المدني': ['هل كانت الزيارة منظمة وتسير وفق برنامج واضح؟','هل استفدت من المشاهدة الميدانية في المركز؟','هل التزمت الزيارة بإجراءات السلامة؟','هل أُتيحت لك فرصة لطرح الأسئلة؟'],
-  'دورة الامن والسلامة': ['هل كانت مواضيع الدورة شاملة ومفيدة؟','هل اكتسبت مهارات جديدة في الأمن والسلامة؟','هل التزم التدريب بمعايير السلامة؟','هل شعرت بالاستعداد لتطبيق ما تعلمته؟'],
-  'دورة الاخلاء': ['هل كانت خطوات الإخلاء واضحة ومفهومة؟','هل التدريب النظري كافٍ لفهم عملية الإخلاء؟','هل شعرت بالاستعداد لتطبيق الإخلاء؟','هل التزمت الدورة بمعايير السلامة؟'],
-  'تطبيق الاخلاء': ['هل كان التطبيق العملي للإخلاء واضحاً؟','هل شعرت بالقدرة على تطبيق الإخلاء بعد التدريب؟','هل التزم التطبيق بإجراءات السلامة اللازمة؟','هل كان التطبيق كافياً لاكتساب المهارة؟'],
-  'تطبيق الايواء': ['هل كان التطبيق العملي للإيواء واضحاً؟','هل وضّح المدرب الفرق بين الإخلاء والإيواء؟','هل شعرت بالقدرة على تطبيق الإيواء؟','هل التزم التطبيق بإجراءات السلامة اللازمة؟'],
-  'أخرى': ['هل كان محتوى الجلسة واضحاً ومفيداً؟','هل تناسبت الجلسة مع احتياجاتك التدريبية؟','هل استفدت من المعلومات المقدمة؟','هل بيئة التدريب كانت مناسبة ومريحة؟'],
+  'محاضرة توعوية':['هل كان محتوى المحاضرة واضحاً ومفهوماً؟','هل كانت المعلومات التوعوية مفيدة وذات صلة؟','هل تناسبت المحاضرة مع الفئة المستهدفة؟','هل شعرت بأن المحاضرة حققت هدفها التوعوي؟'],
+  'معرض توعوي':['هل كانت عروض المعرض جذابة ومفيدة؟','هل المواد والنماذج المعروضة واضحة ومعبّرة؟','هل استفدت من المعلومات المقدمة في المعرض؟','هل كان المعرض منظماً ويسهل التجول فيه؟'],
+  'ورشة عمل':['هل كانت أنشطة الورشة تفاعلية ومحفزة؟','هل حققت الورشة أهدافها التدريبية؟','هل المواد والأدوات المستخدمة كانت كافية؟','هل شاركت بفاعلية في الورشة؟'],
+  'التدريب على استخدام الطفايات (الليزر)':['هل شرح المدرب أنواع الطفايات بوضوح؟','هل كان التدريب على الطفاية الليزرية واضحاً؟','هل شعرت بالثقة في استخدام الطفاية بعد التدريب؟','هل التزم التدريب بإجراءات السلامة؟'],
+  'التدريب على استخدام الطفايات (الحي)':['هل شرح المدرب أنواع الطفايات بوضوح؟','هل كان التطبيق العملي على الطفاية الحقيقية كافياً؟','هل شعرت بالثقة في استخدام الطفاية بعد التدريب؟','هل التزم التدريب بإجراءات السلامة؟'],
+  'استقبال زيارة في مركز الدفاع المدني':['هل كانت الزيارة منظمة وتسير وفق برنامج واضح؟','هل استفدت من المشاهدة الميدانية في المركز؟','هل التزمت الزيارة بإجراءات السلامة؟','هل أُتيحت لك فرصة لطرح الأسئلة؟'],
+  'دورة الامن والسلامة':['هل كانت مواضيع الدورة شاملة ومفيدة؟','هل اكتسبت مهارات جديدة في الأمن والسلامة؟','هل التزم التدريب بمعايير السلامة؟','هل شعرت بالاستعداد لتطبيق ما تعلمته؟'],
+  'دورة الاخلاء':['هل كانت خطوات الإخلاء واضحة ومفهومة؟','هل التدريب النظري كافٍ لفهم عملية الإخلاء؟','هل شعرت بالاستعداد لتطبيق الإخلاء؟','هل التزمت الدورة بمعايير السلامة؟'],
+  'تطبيق الاخلاء':['هل كان التطبيق العملي للإخلاء واضحاً؟','هل شعرت بالقدرة على تطبيق الإخلاء بعد التدريب؟','هل التزم التطبيق بإجراءات السلامة اللازمة؟','هل كان التطبيق كافياً لاكتساب المهارة؟'],
+  'تطبيق الايواء':['هل كان التطبيق العملي للإيواء واضحاً؟','هل وضّح المدرب الفرق بين الإخلاء والإيواء؟','هل شعرت بالقدرة على تطبيق الإيواء؟','هل التزم التطبيق بإجراءات السلامة اللازمة؟'],
+  'أخرى':['هل كان محتوى الجلسة واضحاً ومفيداً؟','هل تناسبت الجلسة مع احتياجاتك التدريبية؟','هل استفدت من المعلومات المقدمة؟','هل بيئة التدريب كانت مناسبة ومريحة؟']
 };
 
-// ── أسئلة تقييم المدرب الشخصي (ثابتة لجميع الأنواع) ──
 var TRAINER_Q = [
   'هل وضّح المدرب أهداف الجلسة بشكل واضح منذ البداية؟',
   'هل أتقن المدرب المادة العلمية التي قدّمها؟',
@@ -216,697 +163,163 @@ var TRAINER_Q = [
   'هل أظهر المدرب حماساً واهتماماً حقيقياً بالموضوع؟',
   'هل شعرت باستفادة حقيقية من هذه الجلسة التدريبية؟',
   'هل ستوصي زملاءك بحضور جلسات تدريبية مع هذا المدرب؟',
-  'ما تقييمك الإجمالي لهذا المدرب؟',
+  'ما تقييمك الإجمالي لهذا المدرب؟'
 ];
+
+var TRAINERS = [
+  'نقيب/منال جوهر الجاسم',
+  'المدرب/سارة الكواري',
+  'المدرب/رشا صالح',
+  'شرطي/سارة قابل',
+  'شرطي/رزان عبدالمنعم',
+  'شرطي/صفية صديق',
+  'شرطي/العنود لال'
+];
+
+var TYPES = [
+  'محاضرة توعوية','معرض توعوي','ورشة عمل',
+  'التدريب على استخدام الطفايات (الليزر)',
+  'التدريب على استخدام الطفايات (الحي)',
+  'استقبال زيارة في مركز الدفاع المدني',
+  'دورة الامن والسلامة','دورة الاخلاء',
+  'تطبيق الاخلاء','تطبيق الايواء','أخرى'
+];
+
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwA1PBogmD2uE1UmQBFKuBJYXmFVkgaGIYsBD5sHGywpn9FEbcZCKIepoFdjLrHhylJ/exec';
 
 var answers = {};
 var allQuestions = [];
 var typeQCount = 0;
 
-// ── تحميل البيانات من الباركود أو localStorage ──────
 window.onload = function(){
   var p = new URLSearchParams(window.location.search);
   var trainer = decodeURIComponent(p.get('trainer')||'');
   var school  = decodeURIComponent(p.get('school') ||'');
   var type    = decodeURIComponent(p.get('type')   ||'');
-  var date    = decodeURIComponent(p.get('date')   ||'');
 
-  // Load hardcoded trainers and types
-  var TRAINERS = [
-    'نقيب/منال جوهر الجاسم',
-    'المدرب/سارة الكواري',
-    'المدرب/رشا صالح',
-    'شرطي/سارة قابل',
-    'شرطي/رزان عبدالمنعم',
-    'شرطي/صفية صديق',
-    'شرطي/العنود لال'
-  ];
-  var TYPES = [
-    'محاضرة توعوية',
-    'معرض توعوي',
-    'ورشة عمل',
-    'التدريب على استخدام الطفايات (الليزر)',
-    'التدريب على استخدام الطفايات (الحي)',
-    'استقبال زيارة في مركز الدفاع المدني',
-    'دورة الامن والسلامة',
-    'دورة الاخلاء',
-    'تطبيق الاخلاء',
-    'تطبيق الايواء',
-    'أخرى'
-  ];
   var tSel = document.getElementById('f-trainer');
   TRAINERS.forEach(function(n){
     var opt = document.createElement('option');
     opt.value = opt.textContent = n;
     tSel.appendChild(opt);
   });
-  var typeSel = document.getElementById('f-type');
-  TYPES.forEach(function(t){
-    var opt = document.createElement('option');
-    opt.value = opt.textContent = t;
-    typeSel.appendChild(opt);
+
+  var typeWrap = document.getElementById('f-type-wrap');
+  TYPES.forEach(function(t,i){
+    var lbl = document.createElement('label');
+    lbl.style.cssText = 'display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;padding:2px 0';
+    var chk = document.createElement('input');
+    chk.type='checkbox'; chk.value=t; chk.id='ftype-'+i;
+    chk.style.cssText='width:16px;height:16px;accent-color:#1B2A4A;cursor:pointer;flex-shrink:0';
+    chk.addEventListener('change', onTypeChange);
+    lbl.appendChild(chk);
+    lbl.appendChild(document.createTextNode(t));
+    typeWrap.appendChild(lbl);
   });
 
-  // Fill from QR params
-  if(trainer){ document.getElementById('f-trainer').value = trainer; }
-  if(school) { document.getElementById('f-school').value  = school;  }
-  if(type)   {
+  if(trainer) document.getElementById('f-trainer').value = trainer;
+  if(school)  document.getElementById('f-school').value  = school;
+  if(type){
     document.getElementById('f-type').value = type;
     onTypeChange();
   }
 };
 
-function getSelectedTypes(){
-  var sel = document.getElementById('f-type');
-  return sel && sel.value ? [sel.value] : [];
+function getCheckedTypes(){
+  var checked = document.querySelectorAll('#f-type-wrap input:checked');
+  return Array.from(checked).map(function(c){return c.value;});
 }
 
 function onTypeChange(){
-  var types = getSelectedTypes();
+  var types = getCheckedTypes();
   if(!types.length) return;
-  var type = types[0];
-
   answers = {};
-  typeQCount = (TYPE_Q[type]||[]).length;
-  var typeSpecific = TYPE_Q[type] || TYPE_Q['أخرى'] || [
-    'هل كان محتوى الجلسة واضحاً ومفيداً؟',
-    'هل استفدت من المعلومات المقدمة؟',
-    'هل تناسبت الجلسة مع احتياجاتك؟',
-    'هل بيئة التدريب كانت مناسبة؟',
-  ];
-  allQuestions = typeSpecific.concat(TRAINER_Q);
-
+  var typeQ = [];
+  types.forEach(function(t){
+    var q = TYPE_Q[t] || TYPE_Q['أخرى'];
+    q.forEach(function(qq){ if(typeQ.indexOf(qq)===-1) typeQ.push(qq); });
+  });
+  typeQCount = typeQ.length;
+  allQuestions = typeQ.concat(TRAINER_Q);
   document.getElementById('prog').style.width = '0%';
-  document.getElementById('prog-label').textContent = '0 من ' + allQuestions.length + ' سؤالاً';
+  document.getElementById('prog-label').textContent = '0 من '+allQuestions.length+' سؤالاً';
   document.getElementById('open-section').style.display = 'block';
   document.getElementById('submit-btn').style.display = 'block';
   document.getElementById('err-msg').style.display = 'none';
-
-  renderQuestions(type);
+  renderQuestions(types.join('، '));
 }
 
 function renderQuestions(type){
   var html = '';
-
-  // Section 1 — type questions
-  if(typeQCount > 0){
-    html += '<div class="sec-header">'
-      +'<span class="sec-header-icon">📋</span>'
-      +'<span class="sec-header-title">تقييم جلسة '+type+'</span>'
-      +'<span class="sec-header-count">'+typeQCount+' أسئلة</span>'
-      +'</div>';
-    for(var i=0;i<typeQCount;i++){
-      html += buildCard(i, allQuestions[i]);
-    }
+  if(typeQCount>0){
+    html += '<div class="sec-header"><span class="sec-header-icon">📋</span><span class="sec-header-title">تقييم جلسة '+type+'</span><span class="sec-header-count">'+typeQCount+' أسئلة</span></div>';
+    for(var i=0;i<typeQCount;i++) html += buildCard(i, allQuestions[i]);
   }
-
-  // Section 2 — trainer questions
-  html += '<div class="sec-header">'
-    +'<span class="sec-header-icon">👷</span>'
-    +'<span class="sec-header-title">تقييم المدرب شخصياً</span>'
-    +'<span class="sec-header-count">'+TRAINER_Q.length+' أسئلة</span>'
-    +'</div>';
-  for(var j=typeQCount;j<allQuestions.length;j++){
-    html += buildCard(j, allQuestions[j]);
-  }
-
+  html += '<div class="sec-header"><span class="sec-header-icon">👷</span><span class="sec-header-title">تقييم المدرب شخصياً</span><span class="sec-header-count">'+TRAINER_Q.length+' أسئلة</span></div>';
+  for(var j=typeQCount;j<allQuestions.length;j++) html += buildCard(j, allQuestions[j]);
   document.getElementById('q-container').innerHTML = html;
 }
 
 function buildCard(i, q){
   var btns = CHOICES.map(function(c){
-    return '<button type="button" class="choice-btn" '
-      +'data-qi="'+i+'" data-v="'+c.v+'" data-cls="'+c.cls+'" '
-      +'onclick="pick(this)">'
-      +'<span class="choice-emoji">'+c.emoji+'</span>'
-      +c.label
-      +'</button>';
+    return '<button type="button" class="choice-btn" data-qi="'+i+'" data-v="'+c.v+'" data-cls="'+c.cls+'" onclick="pick(this)"><span class="choice-emoji">'+c.emoji+'</span>'+c.label+'</button>';
   }).join('');
-  return '<div class="q-card" id="qc-'+i+'">'
-    +'<div class="q-num">سؤال '+(i+1)+' من '+allQuestions.length+'</div>'
-    +'<div class="q-text">'+q+'</div>'
-    +'<div class="choices">'+btns+'</div>'
-    +'</div>';
+  return '<div class="q-card" id="qc-'+i+'"><div class="q-num">سؤال '+(i+1)+' من '+allQuestions.length+'</div><div class="q-text">'+q+'</div><div class="choices">'+btns+'</div></div>';
 }
 
 function pick(btn){
-  var qi  = parseInt(btn.dataset.qi);
-  var v   = parseInt(btn.dataset.v);
-  var cls = btn.dataset.cls;
-  answers[qi] = v;
-
-  var card = document.getElementById('qc-'+qi);
-  card.querySelectorAll('.choice-btn').forEach(function(b){ b.className='choice-btn'; });
-  btn.className = 'choice-btn ' + cls;
-  card.classList.remove('error');
-
-  // Update progress
-  var done = Object.keys(answers).length;
-  var total = allQuestions.length;
-  document.getElementById('prog').style.width = Math.round(done/total*100)+'%';
-  document.getElementById('prog-label').textContent = done+' من '+total+' سؤالاً';
+  var qi=parseInt(btn.dataset.qi), v=parseInt(btn.dataset.v), cls=btn.dataset.cls;
+  answers[qi]=v;
+  document.getElementById('qc-'+qi).querySelectorAll('.choice-btn').forEach(function(b){b.className='choice-btn';});
+  btn.className='choice-btn '+cls;
+  document.getElementById('qc-'+qi).classList.remove('error');
+  var done=Object.keys(answers).length, total=allQuestions.length;
+  document.getElementById('prog').style.width=Math.round(done/total*100)+'%';
+  document.getElementById('prog-label').textContent=done+' من '+total+' سؤالاً';
 }
 
 function submitForm(){
   var school  = document.getElementById('f-school').value.trim();
   var trainer = document.getElementById('f-trainer').value;
-  var selectedTypes = getSelectedTypes();
-  var type = selectedTypes.join('، ');
+  var types = getCheckedTypes();
+  var type  = types.join('، ');
 
-  if(!school)  { alert('يرجى كتابة اسم المدرسة');   document.getElementById('f-school').focus(); return; }
-  var type = document.getElementById('f-type').value;
-  if(!trainer){ alert('يرجى اختيار اسم المدرب');  return; }
-  if(!type)   { alert('يرجى اختيار نوع التدريب'); return; }
+  if(!school)       { alert('يرجى كتابة اسم المدرسة'); document.getElementById('f-school').focus(); return; }
+  if(!trainer)      { alert('يرجى اختيار اسم المدرب'); return; }
+  if(!types.length) { alert('يرجى اختيار نوع التدريب'); return; }
 
-  // Validate all questions answered
-  var missing = [];
-  for(var i=0;i<allQuestions.length;i++){
-    if(answers[i]===undefined) missing.push(i);
-  }
+  var missing=[];
+  for(var i=0;i<allQuestions.length;i++){ if(answers[i]===undefined) missing.push(i); }
   if(missing.length){
-    missing.forEach(function(i){
-      document.getElementById('qc-'+i).classList.add('error');
-    });
-    document.getElementById('err-msg').style.display = 'block';
+    missing.forEach(function(i){ document.getElementById('qc-'+i).classList.add('error'); });
+    document.getElementById('err-msg').style.display='block';
     document.getElementById('qc-'+missing[0]).scrollIntoView({behavior:'smooth',block:'center'});
     return;
   }
 
-  // Calculate average
   var total=0, count=allQuestions.length;
   for(var k=0;k<count;k++) total+=(answers[k]||0);
-  var avg = (total/count).toFixed(1);
-  var grade = avg>=4.5?'ممتاز 🌟':avg>=3.5?'جيد جداً 😊':avg>=2.5?'جيد 🙂':avg>=1.5?'مقبول 😐':'ضعيف 😞';
+  var avg=(total/count).toFixed(1);
+  var grade=avg>=4.5?'ممتاز':avg>=3.5?'جيد جداً':avg>=2.5?'جيد':avg>=1.5?'مقبول':'ضعيف';
 
-  // Save to localStorage
-  try {
-    var db = JSON.parse(localStorage.getItem('cdqs_v3')||'{}');
-    if(!db.evaluations) db.evaluations=[];
-    if(!db.evalNextId)  db.evalNextId=1;
-    db.evaluations.push({
-      id: db.evalNextId++,
-      trainerName: trainer,
-      schoolName: school,
-      reqType: type,
-      date: new Date().toISOString().split('T')[0],
-      answers: answers,
-      oq1: document.getElementById('oq1').value,
-      oq2: document.getElementById('oq2').value,
-      oq3: document.getElementById('oq3').value,
-      avg: parseFloat(avg),
-      grade: grade,
-      submittedAt: new Date().toISOString()
-    });
-    localStorage.setItem('cdqs_v3', JSON.stringify(db));
-  } catch(e){}
-
-  // Build email with special data tag for import
-  var LABELS = {5:'ممتاز',4:'جيد جداً',3:'جيد',2:'مقبول',1:'ضعيف'};
-  var school  = document.getElementById('f-school').value.trim();
-  var trainer = document.getElementById('f-trainer').value;
-  var selectedTypes = getSelectedTypes();
-  var type = selectedTypes.join('، ');
-
-  var emailBody = '===TAQYEEM_DATA_START===\n';
-  emailBody += 'school:'+school+'\n';
-  emailBody += 'trainer:'+trainer+'\n';
-  emailBody += 'type:'+type+'\n';
-  emailBody += 'avg:'+avg+'\n';
-  emailBody += 'grade:'+grade.replace(/[🌟😊🙂😐😞]/g,'').trim()+'\n';
-  emailBody += 'date:'+new Date().toISOString().split('T')[0]+'\n';
-  for(var k in answers){ emailBody += 'q'+k+':'+answers[k]+'\n'; }
-  emailBody += '===TAQYEEM_DATA_END===\n\n';
-  emailBody += '--- تفاصيل التقييم ---\n';
-  emailBody += 'المدرسة: '+school+'\n';
-  emailBody += 'المدرب: '+trainer+'\n';
-  emailBody += 'نوع التدريب: '+type+'\n';
-  emailBody += 'المتوسط: '+avg+' ('+grade.replace(/[🌟😊🙂😐😞]/g,'').trim()+')\n';
-
-  <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نموذج تقييم المدرب</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Calibri,Arial,sans-serif;background:#EEF1F7;min-height:100vh;padding-bottom:40px}
-
-.header{background:linear-gradient(135deg,#1B2A4A,#2C4270);color:#fff;padding:18px 16px;text-align:center}
-.header-icon{font-size:32px;margin-bottom:6px}
-.header-title{font-size:15px;font-weight:700;line-height:1.5}
-.header-sub{font-size:11px;opacity:.75;margin-top:3px}
-.gold-line{height:3px;background:linear-gradient(90deg,#C9A84C,#F0D080,#C9A84C)}
-
-.info-box{background:#fff;margin:14px;border-radius:10px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,.07);border-right:4px solid #C9A84C}
-.info-box h3{font-size:11px;color:#C9A84C;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.info-item label{font-size:10px;color:#999;display:block;margin-bottom:2px}
-.info-item span{font-size:12px;font-weight:700;color:#1B2A4A}
-.info-item input, .info-item select{
-  width:100%;border:1.5px solid #E0E6F0;border-radius:6px;
-  padding:7px 9px;font-size:12px;font-family:Arial;
-  direction:rtl;background:#F8F9FC;color:#1A1816
-}
-.info-item.full{grid-column:1/-1}
-
-.sec-header{
-  display:flex;align-items:center;gap:8px;
-  margin:18px 14px 10px;padding-bottom:8px;
-  border-bottom:2px solid #1B2A4A;
-}
-.sec-header-icon{font-size:16px}
-.sec-header-title{font-size:13px;font-weight:700;color:#1B2A4A;flex:1}
-.sec-header-count{font-size:10px;color:#888;background:#EEF1F7;padding:2px 8px;border-radius:10px}
-
-.q-card{background:#fff;margin:0 14px 10px;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.05);border:1.5px solid transparent;transition:border-color .2s}
-.q-card.error{border-color:#C0392B}
-.q-num{font-size:10px;color:#C9A84C;font-weight:700;margin-bottom:4px}
-.q-text{font-size:13px;font-weight:600;color:#1B2A4A;margin-bottom:12px;line-height:1.5}
-
-.choices{display:flex;gap:6px;flex-wrap:wrap}
-.choice-btn{
-  flex:1;min-width:70px;
-  border:2px solid #E0E6F0;
-  background:#F8F9FC;
-  color:#555;
-  border-radius:8px;
-  padding:8px 4px;
-  font-size:11px;font-weight:600;
-  cursor:pointer;text-align:center;
-  transition:all .2s;
-  font-family:Arial;
-  line-height:1.3;
-}
-.choice-btn:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,.1)}
-.choice-btn.c5{border-color:#1E6B3C;background:#1E6B3C;color:#fff}
-.choice-btn.c4{border-color:#1B2A4A;background:#1B2A4A;color:#fff}
-.choice-btn.c3{border-color:#C9A84C;background:#C9A84C;color:#fff}
-.choice-btn.c2{border-color:#C45E0A;background:#C45E0A;color:#fff}
-.choice-btn.c1{border-color:#C0392B;background:#C0392B;color:#fff}
-
-.choice-emoji{font-size:16px;display:block;margin-bottom:3px}
-
-.prog-wrap{margin:10px 14px 0;background:#E0E6F0;border-radius:4px;height:5px;overflow:hidden}
-.prog-fill{height:100%;background:linear-gradient(90deg,#C9A84C,#1B2A4A);border-radius:4px;transition:width .4s}
-.prog-label{text-align:center;font-size:10px;color:#aaa;margin:4px 0 14px}
-
-.open-card{background:#fff;margin:0 14px 10px;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
-.open-label{font-size:12px;font-weight:600;color:#1B2A4A;margin-bottom:8px}
-textarea{width:100%;border:1.5px solid #E0E6F0;border-radius:8px;padding:10px;font-family:Arial;font-size:12px;min-height:75px;direction:rtl;resize:vertical;background:#F8F9FC;color:#1A1816}
-textarea:focus{outline:none;border-color:#1B2A4A}
-
-.err-msg{display:none;background:#FEF0F0;border:1px solid #C0392B;color:#C0392B;border-radius:8px;padding:10px 14px;font-size:12px;margin:0 14px 10px}
-
-.submit-btn{
-  display:block;width:calc(100% - 28px);margin:4px 14px;
-  background:linear-gradient(135deg,#1B2A4A,#2C4270);
-  color:#fff;border:none;border-radius:12px;
-  padding:15px;font-size:15px;font-weight:700;
-  cursor:pointer;font-family:Arial;
-  transition:opacity .2s,transform .1s;
-}
-.submit-btn:hover{opacity:.9}
-.submit-btn:active{transform:scale(.98)}
-
-.success{max-width:420px;margin:50px auto;padding:30px 20px;text-align:center;font-family:Arial;direction:rtl;display:none}
-.success-icon{font-size:64px;margin-bottom:14px}
-.success-title{font-size:20px;font-weight:700;color:#1B2A4A;margin-bottom:6px}
-.success-sub{font-size:13px;color:#666;margin-bottom:20px}
-.success-box{background:linear-gradient(135deg,#1B2A4A,#2C4270);color:#fff;border-radius:12px;padding:20px}
-.success-avg{font-size:40px;font-weight:900;color:#C9A84C}
-.success-grade{font-size:16px;font-weight:700;margin-top:4px}
-</style>
-</head>
-<body>
-
-<div id="form-wrap">
-  <div class="header">
-    <div class="header-icon">🚒</div>
-    <div class="header-title">نموذج تقييم المدرب<br>قسم التثقيف الوقائي</div>
-    <div class="header-sub">الإدارة العامة للدفاع المدني – دولة قطر</div>
-  </div>
-  <div class="gold-line"></div>
-
-  <!-- معلومات الجلسة -->
-  <div class="info-box">
-    <h3>📋 معلومات الجلسة التدريبية</h3>
-    <div class="info-grid">
-      <div class="info-item full">
-        <label>اسم المدرسة *</label>
-        <input type="text" id="f-school" placeholder="أدخل اسم المدرسة...">
-      </div>
-      <div class="info-item full">
-        <label>المدرب / المدربة *</label>
-        <select id="f-trainer">
-          <option value="">-- اختر المدرب --</option>
-        </select>
-      </div>
-      <div class="info-item full">
-        <label>نوع التدريب *</label>
-        <select id="f-type" onchange="onTypeChange()" style="width:100%;border:1.5px solid #E0E6F0;border-radius:8px;padding:10px 12px;font-size:13px;font-family:Calibri,Arial;direction:rtl;background:#F8F9FC;color:#1A1816">
-          <option value="">-- اختر نوع التدريب --</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <!-- شريط التقدم -->
-  <div class="prog-wrap"><div class="prog-fill" id="prog" style="width:0%"></div></div>
-  <div class="prog-label" id="prog-label">اختر نوع التدريب لتبدأ التقييم</div>
-
-  <!-- الأسئلة -->
-  <div id="q-container"></div>
-
-  <!-- رسالة خطأ -->
-  <div class="err-msg" id="err-msg">⚠️ يرجى الإجابة على جميع الأسئلة</div>
-
-  <!-- أسئلة مفتوحة -->
-  <div id="open-section" style="display:none">
-    <div class="sec-header">
-      <span class="sec-header-icon">✏️</span>
-      <span class="sec-header-title">أسئلة مفتوحة</span>
-    </div>
-    <div class="open-card">
-      <div class="open-label">ما أبرز ما استفدته من هذه الجلسة؟</div>
-      <textarea id="oq1" placeholder="اكتب إجابتك هنا..."></textarea>
-    </div>
-    <div class="open-card">
-      <div class="open-label">ما الجوانب التي تقترح تحسينها؟</div>
-      <textarea id="oq2" placeholder="اكتب اقتراحاتك هنا..."></textarea>
-    </div>
-    <div class="open-card">
-      <div class="open-label">ملاحظات إضافية (اختياري)</div>
-      <textarea id="oq3" placeholder="أي ملاحظات أخرى..."></textarea>
-    </div>
-  </div>
-
-  <!-- زر الإرسال -->
-  <button class="submit-btn" id="submit-btn" style="display:none" onclick="submitForm()">✅ إرسال التقييم</button>
-</div>
-
-<!-- شاشة النجاح -->
-<div class="success" id="success">
-  <div class="success-icon">✅</div>
-  <div class="success-title">شكراً على تقييمك!</div>
-  <div class="success-sub">تم إرسال تقييمك بنجاح وسيُؤخذ بعين الاعتبار</div>
-  <div class="success-box">
-    <div style="font-size:12px;opacity:.8;margin-bottom:8px">متوسط تقييمك للمدرب</div>
-    <div class="success-avg" id="s-avg">—</div>
-    <div class="success-grade" id="s-grade">—</div>
-    <div style="font-size:11px;opacity:.7;margin-top:6px">من 5 درجات</div>
-  </div>
-</div>
-
-<script>
-// ── خيارات التقييم ──────────────────────────────────
-var CHOICES = [
-  {v:5, label:'ممتاز',     emoji:'🌟', cls:'c5'},
-  {v:4, label:'جيد جداً',  emoji:'😊', cls:'c4'},
-  {v:3, label:'جيد',       emoji:'🙂', cls:'c3'},
-  {v:2, label:'مقبول',     emoji:'😐', cls:'c2'},
-  {v:1, label:'ضعيف',      emoji:'😞', cls:'c1'},
-];
-
-// ── أسئلة نوع التدريب ────────────────────────────────
-var TYPE_Q = {
-  'محاضرة توعوية': ['هل كان محتوى المحاضرة واضحاً ومفهوماً؟','هل كانت المعلومات التوعوية مفيدة وذات صلة؟','هل تناسبت المحاضرة مع الفئة المستهدفة؟','هل شعرت بأن المحاضرة حققت هدفها التوعوي؟'],
-  'معرض توعوي': ['هل كانت عروض المعرض جذابة ومفيدة؟','هل المواد والنماذج المعروضة واضحة ومعبّرة؟','هل استفدت من المعلومات المقدمة في المعرض؟','هل كان المعرض منظماً ويسهل التجول فيه؟'],
-  'ورشة عمل': ['هل كانت أنشطة الورشة تفاعلية ومحفزة؟','هل حققت الورشة أهدافها التدريبية؟','هل المواد والأدوات المستخدمة كانت كافية؟','هل شاركت بفاعلية في الورشة؟'],
-  'التدريب على استخدام الطفايات (الليزر)': ['هل شرح المدرب أنواع الطفايات بوضوح؟','هل كان التدريب على الطفاية الليزرية واضحاً؟','هل شعرت بالثقة في استخدام الطفاية بعد التدريب؟','هل التزم التدريب بإجراءات السلامة؟'],
-  'التدريب على استخدام الطفايات (الحي)': ['هل شرح المدرب أنواع الطفايات بوضوح؟','هل كان التطبيق العملي على الطفاية الحقيقية كافياً؟','هل شعرت بالثقة في استخدام الطفاية بعد التدريب؟','هل التزم التدريب بإجراءات السلامة؟'],
-  'استقبال زيارة في مركز الدفاع المدني': ['هل كانت الزيارة منظمة وتسير وفق برنامج واضح؟','هل استفدت من المشاهدة الميدانية في المركز؟','هل التزمت الزيارة بإجراءات السلامة؟','هل أُتيحت لك فرصة لطرح الأسئلة؟'],
-  'دورة الامن والسلامة': ['هل كانت مواضيع الدورة شاملة ومفيدة؟','هل اكتسبت مهارات جديدة في الأمن والسلامة؟','هل التزم التدريب بمعايير السلامة؟','هل شعرت بالاستعداد لتطبيق ما تعلمته؟'],
-  'دورة الاخلاء': ['هل كانت خطوات الإخلاء واضحة ومفهومة؟','هل التدريب النظري كافٍ لفهم عملية الإخلاء؟','هل شعرت بالاستعداد لتطبيق الإخلاء؟','هل التزمت الدورة بمعايير السلامة؟'],
-  'تطبيق الاخلاء': ['هل كان التطبيق العملي للإخلاء واضحاً؟','هل شعرت بالقدرة على تطبيق الإخلاء بعد التدريب؟','هل التزم التطبيق بإجراءات السلامة اللازمة؟','هل كان التطبيق كافياً لاكتساب المهارة؟'],
-  'تطبيق الايواء': ['هل كان التطبيق العملي للإيواء واضحاً؟','هل وضّح المدرب الفرق بين الإخلاء والإيواء؟','هل شعرت بالقدرة على تطبيق الإيواء؟','هل التزم التطبيق بإجراءات السلامة اللازمة؟'],
-  'أخرى': ['هل كان محتوى الجلسة واضحاً ومفيداً؟','هل تناسبت الجلسة مع احتياجاتك التدريبية؟','هل استفدت من المعلومات المقدمة؟','هل بيئة التدريب كانت مناسبة ومريحة؟'],
-};
-
-// ── أسئلة تقييم المدرب الشخصي (ثابتة لجميع الأنواع) ──
-var TRAINER_Q = [
-  'هل وضّح المدرب أهداف الجلسة بشكل واضح منذ البداية؟',
-  'هل أتقن المدرب المادة العلمية التي قدّمها؟',
-  'هل كان شرح المدرب واضحاً وسهل الفهم؟',
-  'هل ربط المدرب المعلومات بأمثلة وتطبيقات واقعية؟',
-  'هل استخدم المدرب أساليب متنوعة تجعل الجلسة شيقة؟',
-  'هل التزم المدرب بالوقت المحدد دون إخلال؟',
-  'هل شجّعك المدرب على المشاركة وطرح الأسئلة؟',
-  'هل تعامل المدرب مع جميع المتدربين باحترام ومساواة؟',
-  'هل أجاب المدرب على استفساراتك بصبر ودقة؟',
-  'هل تحقق المدرب من فهمك للمعلومات المقدمة؟',
-  'هل كان المدرب ملتزماً بالمظهر اللائق والسلوك المهني؟',
-  'هل أظهر المدرب حماساً واهتماماً حقيقياً بالموضوع؟',
-  'هل شعرت باستفادة حقيقية من هذه الجلسة التدريبية؟',
-  'هل ستوصي زملاءك بحضور جلسات تدريبية مع هذا المدرب؟',
-  'ما تقييمك الإجمالي لهذا المدرب؟',
-];
-
-var answers = {};
-var allQuestions = [];
-var typeQCount = 0;
-
-// ── تحميل البيانات من الباركود أو localStorage ──────
-window.onload = function(){
-  var p = new URLSearchParams(window.location.search);
-  var trainer = decodeURIComponent(p.get('trainer')||'');
-  var school  = decodeURIComponent(p.get('school') ||'');
-  var type    = decodeURIComponent(p.get('type')   ||'');
-  var date    = decodeURIComponent(p.get('date')   ||'');
-
-  // Load hardcoded trainers and types
-  var TRAINERS = [
-    'نقيب/منال جوهر الجاسم',
-    'المدرب/سارة الكواري',
-    'المدرب/رشا صالح',
-    'شرطي/سارة قابل',
-    'شرطي/رزان عبدالمنعم',
-    'شرطي/صفية صديق',
-    'شرطي/العنود لال'
-  ];
-  var TYPES = [
-    'محاضرة توعوية',
-    'معرض توعوي',
-    'ورشة عمل',
-    'التدريب على استخدام الطفايات (الليزر)',
-    'التدريب على استخدام الطفايات (الحي)',
-    'استقبال زيارة في مركز الدفاع المدني',
-    'دورة الامن والسلامة',
-    'دورة الاخلاء',
-    'تطبيق الاخلاء',
-    'تطبيق الايواء',
-    'أخرى'
-  ];
-  var tSel = document.getElementById('f-trainer');
-  TRAINERS.forEach(function(n){
-    var opt = document.createElement('option');
-    opt.value = opt.textContent = n;
-    tSel.appendChild(opt);
-  });
-  var typeSel = document.getElementById('f-type');
-  TYPES.forEach(function(t){
-    var opt = document.createElement('option');
-    opt.value = opt.textContent = t;
-    typeSel.appendChild(opt);
-  });
-
-  // Fill from QR params
-  if(trainer){ document.getElementById('f-trainer').value = trainer; }
-  if(school) { document.getElementById('f-school').value  = school;  }
-  if(type)   {
-    document.getElementById('f-type').value = type;
-    onTypeChange();
-  }
-};
-
-function getSelectedTypes(){
-  var sel = document.getElementById('f-type');
-  return sel && sel.value ? [sel.value] : [];
-}
-
-function onTypeChange(){
-  var types = getSelectedTypes();
-  if(!types.length) return;
-  var type = types[0];
-
-  answers = {};
-  typeQCount = (TYPE_Q[type]||[]).length;
-  var typeSpecific = TYPE_Q[type] || TYPE_Q['أخرى'] || [
-    'هل كان محتوى الجلسة واضحاً ومفيداً؟',
-    'هل استفدت من المعلومات المقدمة؟',
-    'هل تناسبت الجلسة مع احتياجاتك؟',
-    'هل بيئة التدريب كانت مناسبة؟',
-  ];
-  allQuestions = typeSpecific.concat(TRAINER_Q);
-
-  document.getElementById('prog').style.width = '0%';
-  document.getElementById('prog-label').textContent = '0 من ' + allQuestions.length + ' سؤالاً';
-  document.getElementById('open-section').style.display = 'block';
-  document.getElementById('submit-btn').style.display = 'block';
-  document.getElementById('err-msg').style.display = 'none';
-
-  renderQuestions(type);
-}
-
-function renderQuestions(type){
-  var html = '';
-
-  // Section 1 — type questions
-  if(typeQCount > 0){
-    html += '<div class="sec-header">'
-      +'<span class="sec-header-icon">📋</span>'
-      +'<span class="sec-header-title">تقييم جلسة '+type+'</span>'
-      +'<span class="sec-header-count">'+typeQCount+' أسئلة</span>'
-      +'</div>';
-    for(var i=0;i<typeQCount;i++){
-      html += buildCard(i, allQuestions[i]);
-    }
-  }
-
-  // Section 2 — trainer questions
-  html += '<div class="sec-header">'
-    +'<span class="sec-header-icon">👷</span>'
-    +'<span class="sec-header-title">تقييم المدرب شخصياً</span>'
-    +'<span class="sec-header-count">'+TRAINER_Q.length+' أسئلة</span>'
-    +'</div>';
-  for(var j=typeQCount;j<allQuestions.length;j++){
-    html += buildCard(j, allQuestions[j]);
-  }
-
-  document.getElementById('q-container').innerHTML = html;
-}
-
-function buildCard(i, q){
-  var btns = CHOICES.map(function(c){
-    return '<button type="button" class="choice-btn" '
-      +'data-qi="'+i+'" data-v="'+c.v+'" data-cls="'+c.cls+'" '
-      +'onclick="pick(this)">'
-      +'<span class="choice-emoji">'+c.emoji+'</span>'
-      +c.label
-      +'</button>';
-  }).join('');
-  return '<div class="q-card" id="qc-'+i+'">'
-    +'<div class="q-num">سؤال '+(i+1)+' من '+allQuestions.length+'</div>'
-    +'<div class="q-text">'+q+'</div>'
-    +'<div class="choices">'+btns+'</div>'
-    +'</div>';
-}
-
-function pick(btn){
-  var qi  = parseInt(btn.dataset.qi);
-  var v   = parseInt(btn.dataset.v);
-  var cls = btn.dataset.cls;
-  answers[qi] = v;
-
-  var card = document.getElementById('qc-'+qi);
-  card.querySelectorAll('.choice-btn').forEach(function(b){ b.className='choice-btn'; });
-  btn.className = 'choice-btn ' + cls;
-  card.classList.remove('error');
-
-  // Update progress
-  var done = Object.keys(answers).length;
-  var total = allQuestions.length;
-  document.getElementById('prog').style.width = Math.round(done/total*100)+'%';
-  document.getElementById('prog-label').textContent = done+' من '+total+' سؤالاً';
-}
-
-function submitForm(){
-  var school  = document.getElementById('f-school').value.trim();
-  var trainer = document.getElementById('f-trainer').value;
-  var selectedTypes = getSelectedTypes();
-  var type = selectedTypes.join('، ');
-
-  if(!school)  { alert('يرجى كتابة اسم المدرسة');   document.getElementById('f-school').focus(); return; }
-  var type = document.getElementById('f-type').value;
-  if(!trainer){ alert('يرجى اختيار اسم المدرب');  return; }
-  if(!type)   { alert('يرجى اختيار نوع التدريب'); return; }
-
-  // Validate all questions answered
-  var missing = [];
-  for(var i=0;i<allQuestions.length;i++){
-    if(answers[i]===undefined) missing.push(i);
-  }
-  if(missing.length){
-    missing.forEach(function(i){
-      document.getElementById('qc-'+i).classList.add('error');
-    });
-    document.getElementById('err-msg').style.display = 'block';
-    document.getElementById('qc-'+missing[0]).scrollIntoView({behavior:'smooth',block:'center'});
-    return;
-  }
-
-  // Calculate average
-  var total=0, count=allQuestions.length;
-  for(var k=0;k<count;k++) total+=(answers[k]||0);
-  var avg = (total/count).toFixed(1);
-  var grade = avg>=4.5?'ممتاز 🌟':avg>=3.5?'جيد جداً 😊':avg>=2.5?'جيد 🙂':avg>=1.5?'مقبول 😐':'ضعيف 😞';
-
-  // Save to localStorage
-  try {
-    var db = JSON.parse(localStorage.getItem('cdqs_v3')||'{}');
-    if(!db.evaluations) db.evaluations=[];
-    if(!db.evalNextId)  db.evalNextId=1;
-    db.evaluations.push({
-      id: db.evalNextId++,
-      trainerName: trainer,
-      schoolName: school,
-      reqType: type,
-      date: new Date().toISOString().split('T')[0],
-      answers: answers,
-      oq1: document.getElementById('oq1').value,
-      oq2: document.getElementById('oq2').value,
-      oq3: document.getElementById('oq3').value,
-      avg: parseFloat(avg),
-      grade: grade,
-      submittedAt: new Date().toISOString()
-    });
-    localStorage.setItem('cdqs_v3', JSON.stringify(db));
-  } catch(e){}
-
-  // Build email with special data tag for import
-  var LABELS = {5:'ممتاز',4:'جيد جداً',3:'جيد',2:'مقبول',1:'ضعيف'};
-  var school  = document.getElementById('f-school').value.trim();
-  var trainer = document.getElementById('f-trainer').value;
-  var selectedTypes = getSelectedTypes();
-  var type = selectedTypes.join('، ');
-
-  var emailBody = '===TAQYEEM_DATA_START===\n';
-  emailBody += 'school:'+school+'\n';
-  emailBody += 'trainer:'+trainer+'\n';
-  emailBody += 'type:'+type+'\n';
-  emailBody += 'avg:'+avg+'\n';
-  emailBody += 'grade:'+grade.replace(/[🌟😊🙂😐😞]/g,'').trim()+'\n';
-  emailBody += 'date:'+new Date().toISOString().split('T')[0]+'\n';
-  for(var k in answers){ emailBody += 'q'+k+':'+answers[k]+'\n'; }
-  emailBody += '===TAQYEEM_DATA_END===\n\n';
-  emailBody += '--- تفاصيل التقييم ---\n';
-  emailBody += 'المدرسة: '+school+'\n';
-  emailBody += 'المدرب: '+trainer+'\n';
-  emailBody += 'نوع التدريب: '+type+'\n';
-  emailBody += 'المتوسط: '+avg+' ('+grade.replace(/[🌟😊🙂😐😞]/g,'').trim()+')\n';
-
-    // Submit to Google Sheets
-  var submitData = {
-    school:  school,
-    trainer: trainer,
-    type:    type,
-    avg:     avg,
-    grade:   grade.replace(/[🌟😊🙂😐😞]/g,'').trim(),
-    date:    new Date().toISOString().split('T')[0],
-    oq1:     (document.getElementById('oq1')||{}).value||'',
-    oq2:     (document.getElementById('oq2')||{}).value||'',
-    oq3:     (document.getElementById('oq3')||{}).value||''
-  };
-  fetch('https://script.google.com/macros/s/AKfycbwA1PBogmD2uE1UmQBFKuBJYXmFVkgaGIYsBD5sHGywpn9FEbcZCKIepoFdjLrHhylJ/exec', {
+  // Submit to Google Sheets
+  fetch(SCRIPT_URL, {
     method:'POST', mode:'no-cors',
     headers:{'Content-Type':'application/json'},
-    body: JSON.stringify(submitData)
+    body: JSON.stringify({
+      school:school, trainer:trainer, type:type,
+      avg:avg, grade:grade,
+      date:new Date().toISOString().split('T')[0],
+      oq1:document.getElementById('oq1').value,
+      oq2:document.getElementById('oq2').value,
+      oq3:document.getElementById('oq3').value
+    })
   }).catch(function(){});
 
-    document.getElementById('form-wrap').style.display = 'none';
-  document.getElementById('s-avg').textContent   = avg;
-  document.getElementById('s-grade').textContent = grade;
-  document.getElementById('success').style.display = 'block';
+  document.getElementById('form-wrap').style.display='none';
+  document.getElementById('s-avg').textContent=avg;
+  document.getElementById('s-grade').textContent=grade;
+  document.getElementById('success').style.display='block';
 }
 </script>
 </body>
